@@ -5,10 +5,12 @@ import "./App.css";
 import Home from "./Components/HomeModule/Home";
 import Upload from "./Components/UploadModule/Upload";
 import Aboutus from "./Components/AboutModule/Aboutus";
+import ThemeToggle from "./Components/ThemeModule/ThemeToggle";
 
 function App() {
     return (
         <Router>
+            <ThemeToggle />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/gallery/*" element={<Gallery />} />
