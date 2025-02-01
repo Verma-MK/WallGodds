@@ -42,4 +42,30 @@ body {
     min-height: 100vh;
 }
 
+/* Navbar color adjustments for dark mode */
+.dark-theme .navbar {
+    background: rgba(11, 20, 55, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Username color in dark mode */
+.dark-theme .username {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Download button styling for dark mode */
+.dark-theme .download-button {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.dark-theme .download-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
 

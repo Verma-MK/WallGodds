@@ -69,7 +69,7 @@
 
 .menuItem a {
     text-decoration: none;
-    color: black;
+    color: black;  
     font-weight: normal;
     transition: color 0.3s, font-weight 0.3s;
     position: relative;
@@ -227,4 +227,33 @@
 .active {
     font-weight: bold;
     border-bottom: 3px solid black;
+}
+
+/* dark theme */
+:global(.dark-theme) .navbar {
+    background-color: rgb(230, 225, 253);
+}
+
+:global(.dark-theme) .menuItem a {
+    color: black;
+}
+
+:global(.dark-theme) .menuItem.active a {
+    border-bottom: 3px solid black;
+}
+
+:global(.dark-theme) .menuItem.active a::after {
+    background-color: black;
+}
+
+:global(.dark-theme) .searchContainer {
+    border: 1px solid #808080;
+}
+
+:global(.dark-theme) .searchInput {
+    color: black;
+}
+
+:global(.dark-theme) .searchInput::placeholder {
+    color: #808080;
 }

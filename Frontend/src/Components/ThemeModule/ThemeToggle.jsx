@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './ThemeToggle.css';
+import styles from './ThemeToggle.module.css';
 
 const ThemeToggle = () => {
     const [isDark, setIsDark] = useState(() => {
@@ -11,29 +11,28 @@ const ThemeToggle = () => {
         if (initialTheme === 'dark') {
             document.body.style.backgroundImage = "url('/BACKGROUND-DARK.svg')";
             document.body.classList.add('dark-theme');
-            updateLogo(true);
+            updateImages(true);
         }
 
-        // Create MutationObserver to watch for logo changes
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
                 if (mutation.type === 'attributes' && mutation.attributeName === 'src') {
                     const isDarkMode = localStorage.getItem('theme') === 'dark';
                     if (isDarkMode) {
-                        updateLogo(true);
+                        updateImages(true);
                     }
                 }
             });
         });
 
-        // Start observing the document for logo changes
         const config = { attributes: true, subtree: true, childList: true };
         observer.observe(document.body, config);
 
         return () => observer.disconnect();
     }, []);
 
-    const updateLogo = (isDarkMode) => {
+    const updateImages = (isDarkMode) => {
+        // Update Logo
         const logoElements = document.querySelectorAll('img[src*="Logo"]');
         logoElements.forEach(logo => {
             if (isDarkMode && !logo.src.includes('Logo-white.svg')) {
@@ -42,6 +41,26 @@ const ThemeToggle = () => {
                 logo.src = '/Logo.svg';
             }
         });
+
+        // Update Download button
+        const downloadElements = document.querySelectorAll('img[src*="DownloadButton"]');
+        downloadElements.forEach(download => {
+            if (isDarkMode && !download.src.includes('DownloadButton-white.svg')) {
+                download.src = '/DownloadButton-white.svg';
+            } else if (!isDarkMode && !download.src.includes('DownloadButton.svg')) {
+                download.src = '/DownloadButton.svg';
+            }
+        });
+
+        // Update Navbar
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            if (isDarkMode) {
+                navbar.style.backgroundColor = 'rgb(230, 225, 253)';
+            } else {
+                navbar.style.backgroundColor = 'white';
+            }
+        }
     };
 
     const toggleTheme = () => {
@@ -49,19 +68,19 @@ const ThemeToggle = () => {
         if (!isDark) {
             document.body.style.backgroundImage = "url('/BACKGROUND-DARK.svg')";
             document.body.classList.add('dark-theme');
-            updateLogo(true);
+            updateImages(true);
             localStorage.setItem('theme', 'dark');
         } else {
             document.body.style.backgroundImage = "url('/BACKGROUND.svg')";
             document.body.classList.remove('dark-theme');
-            updateLogo(false);
+            updateImages(false);
             localStorage.setItem('theme', 'light');
         }
     };
 
     return (
         <button 
-            className="theme-toggle" 
+            className={styles['theme-toggle']} 
             onClick={toggleTheme}
             aria-label="Toggle theme"
         >
