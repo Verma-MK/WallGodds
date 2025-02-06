@@ -1,80 +1,75 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import styles from './ThemeToggle.module.css';
 
 const ThemeToggle = () => {
     const [isDark, setIsDark] = useState(() => {
         return localStorage.getItem('theme') === 'dark';
     });
+    const location = useLocation();
 
     useEffect(() => {
         const initialTheme = localStorage.getItem('theme');
         if (initialTheme === 'dark') {
-            document.body.style.backgroundImage = "url('/BACKGROUND-DARK.svg')";
-            document.body.classList.add('dark-theme');
-            updateImages(true);
+            applyDarkTheme();
         }
-
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.type === 'attributes' && mutation.attributeName === 'src') {
-                    const isDarkMode = localStorage.getItem('theme') === 'dark';
-                    if (isDarkMode) {
-                        updateImages(true);
-                    }
-                }
-            });
-        });
-
-        const config = { attributes: true, subtree: true, childList: true };
-        observer.observe(document.body, config);
-
-        return () => observer.disconnect();
     }, []);
 
-    const updateImages = (isDarkMode) => {
-        // Update Logo
-        const logoElements = document.querySelectorAll('img[src*="Logo"]');
-        logoElements.forEach(logo => {
-            if (isDarkMode && !logo.src.includes('Logo-white.svg')) {
-                logo.src = '/Logo-white.svg';
-            } else if (!isDarkMode && !logo.src.includes('Logo.svg')) {
-                logo.src = '/Logo.svg';
-            }
-        });
-
-        // Update Download button
-        const downloadElements = document.querySelectorAll('img[src*="DownloadButton"]');
-        downloadElements.forEach(download => {
-            if (isDarkMode && !download.src.includes('DownloadButton-white.svg')) {
-                download.src = '/DownloadButton-white.svg';
-            } else if (!isDarkMode && !download.src.includes('DownloadButton.svg')) {
-                download.src = '/DownloadButton.svg';
-            }
-        });
-
-        // Update Navbar
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            if (isDarkMode) {
-                navbar.style.backgroundColor = 'rgb(230, 225, 253)';
-            } else {
-                navbar.style.backgroundColor = 'white';
-            }
+    // Re-apply theme on route change
+    useEffect(() => {
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            applyDarkTheme();
         }
+    }, [location]);
+
+    const applyDarkTheme = () => {
+        document.body.style.backgroundImage = "url('/BACKGROUND-DARK.svg')";
+        document.body.classList.add('dark-theme');
+        document.body.style.color = 'white';
+        updateImages(true);
+    };
+
+    const applyLightTheme = () => {
+        document.body.style.backgroundImage = "url('/BACKGROUND.svg')";
+        document.body.classList.remove('dark-theme');
+        document.body.style.color = 'black';
+        updateImages(false);
+    };
+
+    const updateImages = (isDarkMode) => {
+        setTimeout(() => {
+            // Update Logo
+            document.querySelectorAll('img[src*="Logo"]').forEach(logo => {
+                logo.src = isDarkMode ? '/Logo-white.svg' : '/Logo.svg';
+            });
+
+            // Update Download button
+            document.querySelectorAll('img[src*="DownloadButton"]').forEach(download => {
+                download.src = isDarkMode ? '/DownloadButton-white.svg' : '/DownloadButton.svg';
+            });
+
+            // Update Search icon
+            // document.querySelectorAll('img[alt="Search"]').forEach(icon => {
+            //     icon.src = isDarkMode ? '/SearchIcon-dark.svg' : '/SearchIcon.svg';
+            // });
+
+            // Update Profile icon
+            // document.querySelectorAll('img[alt="Profile"]').forEach(icon => {
+            //     icon.src = isDarkMode ? '/ProfileIcon-dark.svg' : '/ProfileIcon.svg';
+            // });
+        }, 0);
     };
 
     const toggleTheme = () => {
-        setIsDark(!isDark);
-        if (!isDark) {
-            document.body.style.backgroundImage = "url('/BACKGROUND-DARK.svg')";
-            document.body.classList.add('dark-theme');
-            updateImages(true);
-            localStorage.setItem('theme', 'dark');
+        const newTheme = !isDark;
+        setIsDark(newTheme);
+        localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+        
+        if (newTheme) {
+            applyDarkTheme();
         } else {
-            document.body.style.backgroundImage = "url('/BACKGROUND.svg')";
-            document.body.classList.remove('dark-theme');
-            updateImages(false);
-            localStorage.setItem('theme', 'light');
+            applyLightTheme();
         }
     };
 
