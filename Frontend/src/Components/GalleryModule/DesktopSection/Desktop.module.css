@@ -16,6 +16,7 @@ body {
 .imgCards {
     display: flex;
     justify-content: space-around;
+    width: 99.5%;
     margin-bottom: 3%;
-    gap: 5%;
+    gap: 3%;
 }
