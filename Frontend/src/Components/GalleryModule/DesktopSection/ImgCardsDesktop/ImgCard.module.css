@@ -49,7 +49,6 @@
 .username {
     font-size: 20px;
     color: #808080;
-    margin-right: 7%;
 }
 
 :global(.dark-theme) .username {
