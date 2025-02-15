@@ -41,25 +41,15 @@ const ThemeToggle = () => {
 
     const updateImages = (isDarkMode) => {
         setTimeout(() => {
-            // Update Logo
+            //Logo
             document.querySelectorAll('img[src*="Logo"]').forEach(logo => {
                 logo.src = isDarkMode ? '/Logo-white.svg' : '/Logo.svg';
             });
 
-            // Update Download button
+            //Download button
             document.querySelectorAll('img[src*="DownloadButton"]').forEach(download => {
                 download.src = isDarkMode ? '/DownloadButton-white.svg' : '/DownloadButton.svg';
             });
-
-            // Update Search icon
-            // document.querySelectorAll('img[alt="Search"]').forEach(icon => {
-            //     icon.src = isDarkMode ? '/SearchIcon-dark.svg' : '/SearchIcon.svg';
-            // });
-
-            // Update Profile icon
-            // document.querySelectorAll('img[alt="Profile"]').forEach(icon => {
-            //     icon.src = isDarkMode ? '/ProfileIcon-dark.svg' : '/ProfileIcon.svg';
-            // });
         }, 0);
     };
 
