@@ -1,26 +1,22 @@
-.theme-toggle {
-    position: fixed;
-    right: 20px;
-    top: 120px; /* Moved further down */
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
+.themeToggle {
+    background: none;
+    border: none;
     cursor: pointer;
-    z-index: 1000;
-    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.theme-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.toggleIcon {
+    width: 32px;
+    height: 32px;
+}
+
+/* Dark theme specific styles */
+:global(.dark-theme) .toggleIcon {
+    stroke: #ffffff;
 }
 
 /* Enhanced title visibility for dark mode */
@@ -68,4 +64,3 @@ body {
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
-

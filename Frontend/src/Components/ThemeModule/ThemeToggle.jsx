@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import styles from './ThemeToggle.module.css';
+import DarkIcon from '/DarkIcon.svg';
+import LightIcon from '/LightIcon.svg';
 
 const ThemeToggle = () => {
     const [isDark, setIsDark] = useState(() => {
@@ -75,11 +77,16 @@ const ThemeToggle = () => {
 
     return (
         <button 
-            className={styles['theme-toggle']} 
+            className={styles.themeToggle} 
             onClick={toggleTheme}
             aria-label="Toggle theme"
+            title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
         >
-            {isDark ? '☀️' : '🌙'}
+            <img 
+                src={isDark ? LightIcon : DarkIcon} 
+                alt={isDark ? "Light Mode" : "Dark Mode"}
+                className={styles.toggleIcon}
+            />
         </button>
     );
 };
