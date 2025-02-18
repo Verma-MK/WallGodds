@@ -79,7 +79,7 @@
 
 .listItem:nth-child(3) img {
     /* since Desktop.svg appears smaller, scale its size to match Mobile & Tablet */
-    width: 1.15em !important; 
+    width: 1.18em !important; 
 }
 
 .listItem::before {
@@ -163,7 +163,7 @@ small {
 
 @media (max-width: 768px) {
     .sidebar {
-        width: 20vw; /* Slightly wider for better touch interaction */
+        width: 17vw; 
         padding-left: 2%;
     }
     .listItem img {
