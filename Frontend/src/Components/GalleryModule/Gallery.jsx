@@ -44,6 +44,7 @@ const Gallery = () => {
                         <Route path="desktop" element={<Desktop />} />
                         <Route path="" element={<Navigate to="mobile" replace />} />
                     </Routes>
+                    <div className={Styles.blendOverlay2} style={{ opacity: showBlend ? 1 : 0 }} />
                 </div>
             </div>
         </div>
