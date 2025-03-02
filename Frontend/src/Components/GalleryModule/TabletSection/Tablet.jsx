@@ -11,9 +11,9 @@ const Tablet = () => {
     return (
         <div className={Styles.gallery}>
             <div className={Styles.imgCards}>
+                <ImgCard imageSrc={img3} />
                 <ImgCard imageSrc={img1} />
                 <ImgCard imageSrc={img2} />
-                <ImgCard imageSrc={img3} />
             </div>
             <div className={Styles.imgCards}>
                 <ImgCard imageSrc={img4} />

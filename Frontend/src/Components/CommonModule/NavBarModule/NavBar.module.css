@@ -187,7 +187,7 @@
 }
 
 
-@media (max-width: 1211px) {
+/* @media (max-width: 1211px) {
     .menu {
         font-size: 0.6em;
         gap: 3em;
@@ -208,14 +208,6 @@
 }
 
 @media (max-width: 992px) {
-    /* .navItems {
-        width: 80%;
-    }
-
-    .menuItem {
-        margin: 0 20px;
-    } */
-
     .searchContainer {
         width: 400px;
     }
@@ -274,6 +266,136 @@
     .logoContainer {
         top: 2.5em;
         left: 1em;
+    }
+} */
+
+@media (max-width: 425px) {
+    .MainContainer{
+        padding: 0.2em 0;
+        gap: 0%;
+    }
+
+    .MainContainer::before{
+        border-radius: 4.5px;
+        margin: -1px;
+        padding: 1px;
+    }
+
+    .navbar{
+        height: fit-content;
+        width: 78%;
+        border-radius: 4.5px;
+        margin-top: 0.7%;
+    }
+
+    .navbarWrapper{
+        padding: 0;
+        padding-left: 5.5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo {
+        width: 60%;
+        margin-right: 0%;
+        content: url('/LogoSmall.png');
+    }
+
+    .logoContainer{
+        position: fixed;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logoLink{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navItems{
+        display: flex;
+        flex-direction: row;
+        width: 60%;
+        justify-content: left;
+    }
+
+    .menu{
+        display: flex;
+        font-size: 1.6vw;
+        gap: 2em;
+        align-items: center;
+    }
+
+    .menuLink {
+        margin-top: 6px;
+        padding-bottom: 8px;
+    }
+
+    .menuLink::after {
+        bottom: 3.2px;
+        left: 50%;
+        width: 16px;
+        height: 1.25px;
+    }
+    
+    .searchContainer {
+        padding: 0;
+        width: 35%;
+        height: fit-content;
+        border-radius: 4.5px;
+        justify-content: right;
+    }
+
+    .searchInput{
+        padding: 0;
+        height: fit-content;
+    }
+    
+    .searchButton img{
+        width: 2.8vw;
+        padding: 1px 1px;
+    }
+
+    .searchButton{
+        padding: 0 5px;
+        height: fit-content;
+        display: flex;
+    }
+
+    .profileContainer {
+        padding-left: 0.5px;
+        gap: 0.01rem;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .profileButton{
+        justify-content: center;
+        align-content: center;
+        padding: 0;
+        padding-right: 5px;
+        padding-left: 2px;
+        padding-top: 1vw;
+    }
+    
+    .profileButton img{
+        width: 3vw;
+        padding: 0;
+    }
+
+    .logoContainer {
+        margin-right: 0.2em;
+        top: 1em;
+        left: 0.3em;
+        width: 14%; 
+    }
+
+    .hide{
+        display: none;
     }
 }
 

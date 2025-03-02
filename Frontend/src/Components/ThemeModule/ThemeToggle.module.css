@@ -58,3 +58,9 @@ body {
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
+
+@media (max-width: 425px) {
+    .themeToggle {
+        display: none;
+    }
+}

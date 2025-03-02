@@ -3,7 +3,7 @@
     top: 3.9em;
     height: 100vh; /* Ensure sidebar takes full height */
     width: clamp(12%, 13vw, 20%); /* Adjust width dynamically */
-    min-height: 100vh; /* Ensure it fills the full height */
+    min-height: 100vh;
     padding-left: 3.75%;
     display: flex;
     flex-direction: column;
@@ -168,5 +168,75 @@ small {
     }
     .listItem img {
         width: 1.2em;
+    }
+}
+
+@media (max-width: 425px) {
+    .sidebar {
+        z-index: 1001;
+        width: 100vw;
+        min-height: 0;
+        top: 419px;
+        left: 0;
+        padding: 5px 5vw;
+        padding-bottom: 16px;
+        flex-direction: row;
+        background: none;
+    }
+    
+    
+    .mainContainer {
+        position: fixed;
+        bottom: 7px;
+        border-radius: 3.7px;
+        width: 91%;
+        min-height: 0px;
+        height: 45px;
+        border-radius: 10px;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    
+    .listContainer {
+        padding: 2px;
+    }
+    
+    .verticalList {
+        flex-direction: row-reverse;
+        gap: 19vw;
+        width: 100%;
+        margin: 0;
+        padding: 2px 0px;
+    }
+
+    .listItem, .listItem.active, .listItem:hover{
+        transform: rotate(90deg);
+    }
+    
+    .listItem.active{
+        box-shadow: 1px -1px 2.5px #00000089;
+    }
+
+    .listItem{
+        padding: 20px 10px;
+        border-radius: 7px;
+    }
+
+    .listItem::before{
+        padding: 2.6px;
+        border-radius: 7px;
+    }
+
+    .listItem img{
+        width: 2.5vw;
+    }
+
+    .listItem:nth-child(3) img {
+        width: 3vw !important; 
+    }
+
+    .hide{
+        display: none;
     }
 }
