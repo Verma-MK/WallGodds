@@ -206,17 +206,20 @@ body {
     margin: 0 7%;
   }
   .homeThisWay{
-    border-radius: 0;
+    border: 0.8px solid #000000;
+    border-radius: 5px;
     margin: 4rem 0;
   }
   .homeMessage {
-    gap: 5px;
+    padding: 5px;
+    gap: 7px;
   }
   .homeMessage > img {
     width: 25px;
   }
   .homeMessage > h1 {
-    font-size: 15px;
+    font-size: 20px;
+    text-shadow: 3px 3px black;
     -webkit-text-stroke: 0.5px black;
   }
   .pageNotFound {
