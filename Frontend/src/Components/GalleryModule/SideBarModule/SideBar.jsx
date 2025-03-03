@@ -50,7 +50,7 @@ const SideBar = () => {
                         </li>
                     </ul>
                 </div>
-                <div className={styles.copyright}>
+                <div className={`${styles.copyright} ${styles.hide}`}>
                     <p id="copyright">© WallGodds<small> 2025</small></p>
                 </div>
             </div>

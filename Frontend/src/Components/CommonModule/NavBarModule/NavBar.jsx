@@ -22,7 +22,7 @@ const NavBar = () => {
                                 <NavLink
                                     to="/"
                                     className={({ isActive }) =>
-                                        isActive ? `${Style.menuLink} ${Style.active}` : Style.menuLink
+                                        isActive ? `${Style.menuLink} ${Style.active} ${Style.hide}` : `${Style.menuLink} ${Style.hide}`
                                     }
                                 >
                                     Home
@@ -62,7 +62,7 @@ const NavBar = () => {
                     </div>
                     <div className={Style.searchContainer}>
                         <input
-                            className={Style.searchInput}
+                            className={`${Style.searchInput} ${Style.hide}`}
                             type="text"
                             placeholder="Search your wallpaper"
                         />

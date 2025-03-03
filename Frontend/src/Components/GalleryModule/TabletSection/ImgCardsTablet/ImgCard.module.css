@@ -1,6 +1,6 @@
 .imgCard {
-    width: 350px;
-    /* height: 480px; */
+    /* width: 350px; */
+    width: 100%;
     height: fit-content;
     display: flex;
     align-items: end;
@@ -71,4 +71,37 @@
 .icon:hover,
 .downloadBtn:hover {
     transform: scale(1.1);
+}
+
+@media (max-width: 425px) {
+    .icons{
+        margin: 5.5%;
+    }
+
+    .icon{
+        width: 5.5vw;
+    }
+
+    .icon:nth-child(1) {
+        width: 5.7vw !important; 
+    }
+
+    .imgCard{
+        position: relative;
+    }
+
+    .bottomBar{
+        position: absolute;
+        bottom: 0;
+        padding: 0.4em 0.6em;
+    }
+
+    .username{
+        font-size: 4.2vw;
+        margin-left: 1.25em;
+    }
+
+    .downloadBtn{
+        width: 35vw;
+    }
 }
