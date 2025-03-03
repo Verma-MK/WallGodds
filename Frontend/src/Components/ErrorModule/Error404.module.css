@@ -21,7 +21,7 @@ body {
 
 .container {
   position: relative;
-  background-color: white;      /* #f8f9fa */
+  background-color: white;     
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -204,27 +204,28 @@ body {
     font-size: 15px;
     padding: 0 4px;
     margin: 0 7%;
+    font-weight: 400;
   }
   .homeThisWay{
-    border: 0.8px solid #000000;
+    border: 1px solid rgba(0,0,0,0.2);
     border-radius: 5px;
-    margin: 4rem 0;
+    margin: 2rem 0 3.5rem 0;
   }
   .homeMessage {
-    padding: 5px;
+    padding: 1px 5px;
     gap: 7px;
   }
   .homeMessage > img {
-    width: 25px;
+    width: 22px;
   }
   .homeMessage > h1 {
-    font-size: 20px;
-    text-shadow: 3px 3px black;
+    font-size: 15px;
+    text-shadow: 2px 2px black;
     -webkit-text-stroke: 0.5px black;
   }
   .pageNotFound {
     border-radius: 8px;
     font-size: 0.6rem;
-    bottom: -40px;
+    bottom: -30px;
   }
 }
