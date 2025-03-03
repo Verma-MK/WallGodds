@@ -217,7 +217,7 @@ body {
   }
   .homeMessage > h1 {
     font-size: 15px;
-    text-shadow: 0.025px black;
+    -webkit-text-stroke: 0.5px black;
   }
   .pageNotFound {
     border-radius: 8px;
