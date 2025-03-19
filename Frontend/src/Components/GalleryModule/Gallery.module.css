@@ -16,7 +16,7 @@ body {
     overflow: hidden;
     position: relative;
     margin-top: 4em;
-    width: 100%;
+    width: 100vw;
 }
 
 .gallery {
@@ -39,7 +39,7 @@ body {
     width:78.7vw;
     overflow-y: auto;
     padding-top: 0px;
-    margin-left: 24.5%;
+    margin-left: 23%;
     position: relative;
 }
 

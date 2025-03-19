@@ -15,7 +15,6 @@ body {
 
 .imgCards {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     width: 99.5%;
     margin-bottom: 3%;
@@ -26,5 +25,6 @@ body {
 {
     .imgCards{
         gap: 10px;
+        flex-wrap: wrap;
     }
 }
