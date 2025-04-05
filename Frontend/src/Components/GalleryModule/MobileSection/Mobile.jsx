@@ -1,4 +1,6 @@
 import ImgCard from "./ImgCardsMobile/ImgCard";
+import Styles from "./Mobile.module.css";
+
 import img1 from "./MobileAssets/mobile_wallpaper1.png";
 import img2 from "./MobileAssets/mobile_wallpaper2.png";
 import img3 from "./MobileAssets/mobile_wallpaper3.png";
@@ -9,43 +11,19 @@ import img7 from "./MobileAssets/mobile_wallpaper7.png";
 import img8 from "./MobileAssets/mobile_wallpaper8.png";
 import img9 from "./MobileAssets/mobile_wallpaper9.png";
 import img10 from "./MobileAssets/mobile_wallpaper10.png";
-import Styles from "./Mobile.module.css";
+
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
 
 const Mobile = () => {
     return (
-        <div className={Styles.MobileGrid}>
-            <div className={Styles.imgCards}>
-                <ImgCard imageSrc={img1} />
-                <ImgCard imageSrc={img2} />
-                <ImgCard imageSrc={img3} />
-                <ImgCard imageSrc={img4} />
-                <ImgCard imageSrc={img5} />
-                <ImgCard imageSrc={img6} />
+        <div className={Styles.gallery}>
+            <div className={Styles.imgGrid}>
+                {images.map((img, index) => (
+                    <ImgCard key={index} imageSrc={img} />
+                ))}
             </div>
-            {/* <div className={Styles.imgCards}>
-                <ImgCard imageSrc={img6} />
-                <ImgCard imageSrc={img7} />
-                <ImgCard imageSrc={img8} />
-                <ImgCard imageSrc={img9} />
-                <ImgCard imageSrc={img10} />
-            </div>
-            <div className={Styles.imgCards}>
-                <ImgCard imageSrc={img1} />
-                <ImgCard imageSrc={img2} />
-                <ImgCard imageSrc={img3} />
-                <ImgCard imageSrc={img4} />
-                <ImgCard imageSrc={img5} />
-            </div>
-            <div className={Styles.imgCards}>
-                <ImgCard imageSrc={img6} />
-                <ImgCard imageSrc={img7} />
-                <ImgCard imageSrc={img8} />
-                <ImgCard imageSrc={img9} />
-                <ImgCard imageSrc={img10} />
-            </div> */}
-            
         </div>
-
     );
 };
+
 export default Mobile;

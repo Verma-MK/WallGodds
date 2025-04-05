@@ -1,145 +1,146 @@
-.imageContainer {
-    position: relative; 
-    display: inline-block;
-    width: 12vw; 
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.image {
+.imgCard {
     position: relative;
-    display: block;
     width: 100%;
-    height: auto;
+    max-width: 80em;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Image Wrapper */
+.imageContainer {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Image */
+.image {
+    width: 100%;
+    display: block;
     border-radius: 10px;
 }
 
-.icons {
-    display: flex;
+/* Common Icon Styling */
+.icon {
     position: absolute;
-    margin: 1%;
-    margin-left: 1.6%;
-    align-items: center;
-    justify-content: space-between;
-    opacity: 50%;
-    z-index: 10;
-    width: 12%;
-}
-
-.save {
-    transition: transform 0.2s ease;
+    padding: 6px;
     cursor: pointer;
-    width: 1.6vw;
-}
-
-.heart{
     transition: transform 0.2s ease;
-    cursor: pointer;
-    width: 1.45vw;
 }
 
-.downloadBtn {
-    transition: transform 0.2s ease;
-    cursor: pointer;
-    width: 80%;  
+/* Bookmark Icon (Top-Left) */
+.bookmarkIcon {
+    top: 1px;
+    left: 1px;
+    color: gray;
+    font-size: 2em;
 }
 
-.heart:hover, .save:hover, .downloadBtn:hover {
+/* Heart Icon (Top-Right) */
+.heartIcon {
+    top: 4px;
+    right: 4px;
+    color: red;
+    font-size: 2em;
+}
+
+/* Hover Effect */
+.icon:hover {
     transform: scale(1.1);
 }
 
-.bottomBar {
-    width: 100%;
-    /* height: 36px; */
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.bottomBar2{
-    display: none;
-}
-
-/* .userInfo {
-    display: flex;
-    position: relative;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-} */
-
+/* Username (Always Visible) */
 .username {
     position: absolute;
     bottom: 10px;
     left: 10px;
-    z-index: 10;
-    font-size: 0.85vw; 
-    color: #808080;
+    color: rgba(255, 255, 255, 0.582);
+    font-size: 12px;
+    font-family: 'Comfortaa','sans-serif';
+    /* background: rgba(255, 255, 255, 0.5); */
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-/* Media query for responsiveness */
+/* Download Button (Larger Screens Only) */
+.downloadBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    /* padding:0em 3em; */
+}
+
+.downloadBtn {
+    background: transparent;
+    color: #a9a7a7;
+    border: 1px solid #a9a7a7;
+    padding: 0.3em 0.7em;
+    font-size: 0.7em;
+    font-family: 'Comfortaa','sans-serif';
+    border-radius: 0.6em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.downloadIcon {
+    font-size: 16px;
+}
+
+.downloadBtn:hover {
+    background-color: rgba(128, 128, 128, 0.2);
+    transform: scale(1.05);
+    border-color: rgb(208, 208, 208);
+    color: rgb(248, 248, 248);
+}
+
+/* Bottom Overlay for Mobile Screens (Hidden by Default) */
+.bottomOverlay {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: none; /* Hide by default */
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.3em 0.4em;
+    border-radius: 0 0 10px 10px;
+    color:rgba(255, 255, 255, 0.272)
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .icons {
-        gap: 4vw;  /* Adjust the gap for smaller screens */
+    .bottomOverlay {
+        display: flex; /* Show only on mobile */
     }
-    .heart, .save {
-        width: 8 vw; /* Adjust the icon size for smaller screens */
-    }
-}
-
-@media (max-width: 425px)
-{
-    .imageContainer{
-        position: relative;
-        width: 100%;
-        width: 43.5vw;
-        height: auto;
+    
+    .downloadBar {
+        display: none; /* Hide separate button on mobile */
     }
 
-    .imgCard{
-        width: 48%;
-        margin-bottom: 0.5%;
-    }
-
-    .image{
-        width: 100%;
-        height: auto;
-    }
-
-    .icons{
-        width: 42%;
-        margin-left: 2.5%;
-        margin-top: 2%;
-    }
-
-    .save{
-        width: 5vw;
-    }
-
-    .heart{
-        width: 4.5vw;
-    }
-
-    .username{
-        font-size: 2.75vw;
-        margin-bottom: 1%;
-    }
-
-    .bottomBar{
+    /* Hide the regular username and move it into the bottom overlay */
+    .username {
         display: none;
     }
 
-    .bottomBar2{
-        display: block;
-        position: absolute;
-        width: 46%;
-        bottom: 1.75%;
-        right: 8%;
+    .downloadBtn{
+        background-color:#7e7e7e4e ;
+        font-size:0.5em;
     }
 
-    .downloadBtn{
-        /* position: absolute; */
-        width: 21vw;
+    span{
+        font-size: 0.7em;
     }
+
+    /* .username{
+        font-size: 0.7em;
+    } */
 }

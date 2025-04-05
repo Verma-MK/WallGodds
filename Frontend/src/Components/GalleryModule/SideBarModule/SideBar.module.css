@@ -1,242 +1,205 @@
+/* Sidebar Fixes */
 .sidebar {
-    position: fixed;
-    top: 3.9em;
-    height: 100vh; /* Ensure sidebar takes full height */
-    width: clamp(15%, 13vw, 20%); /* Adjust width dynamically */
-    min-height: 100vh;
-    padding-left: 2.6%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 3.2em;
-    transition: width 0.3s ease-in-out; /* Smooth resizing */
-    justify-content: space-between; /* Distributes items properly */
-    padding-bottom: 1rem; /* Small gap at the bottom */
+  margin-top: 4em;
+  /* margin-bottom: 3.2em; */
+  margin-left: 1em;
+  position: fixed;
+  top: 3em;
+  height: 100vh; /* Full height */
+  width: clamp(15%, 13vw, 20%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering items */
+  justify-content: space-between; /* Space out items */
+  transition: width 0.3s ease-in-out;
+  padding-bottom: 1rem;
 }
 
-
-.mainContainer {
-    border-radius: 3.7px;
-    width: 88%;
-    background: linear-gradient(180deg, rgba(230, 225, 253, 0.39) 0%, rgba(253, 215, 222, 0.39) 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 80vh;
-}
-
-
-.listContainer {
+/* Style links inside list items */
+.listItem a {
+    color: black !important; /* Set text color to black */
+    text-decoration: none !important; /* Remove underline */
+    /* font-weight: thin; */
+    font-size: 1em;
+    display: inline-block;
     padding: 10px;
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transition: color 0.3s ease-in-out;
 }
 
-.verticalList {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
+/* Hover effect (optional) */
+.listItem a:hover {
+    color: #555; /* Slightly darker on hover */
 }
 
-.verticalList li {
-    margin: 1em 0;
-}
 
-.copyright {
-    text-align: center;
-    color: rgba(0, 0, 0, 0.19);
-    font-family: Comfortaa, sans-serif;
-    font-size: 1.2em;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: capitalize;
-    cursor: default;
+/* Main Container Centering */
+.mainContainer {
+  width: 70%;
+  background: linear-gradient(
+    180deg,
+    rgba(230, 225, 253, 0.39) 0%,
+    rgba(253, 215, 222, 0.39) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering content */
+  justify-content: space-between;
+  min-height: 80vh; /* Increased for better spacing */
+  border-radius: 3.7px;
+  /* margin-bottom: em; */
 }
 
 .listItem {
-    cursor: pointer;
-    padding: 20px 13px 20px 13px;
-    position: relative;
-    border-radius: 12.41px;
-    transition: transform 0.3s;
-    color: #000;
-    font-weight: bold;
-    z-index: 1;
+  position: relative;
+  cursor: pointer;
+  border-radius: 12.41px; /* Rounded shape */
+  transition: transform 0.3s ease-in-out;
+  color: #ab4848;
+  /* font-weight: bold; */
+  text-align: center;
+  writing-mode: vertical-rl; /* Rotates text */
+  transform: rotate(180deg); 
 }
 
-.listItem img{
-    width: 1.05em;
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Prevent overflow */
-}
-
-.listItem:nth-child(3) img {
-    /* since Desktop.svg appears smaller, scale its size to match Mobile & Tablet */
-    width: 1.18em !important; 
-}
-
+/* Pseudo-element for border effect */
 .listItem::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 12.41px;
-    padding: 3.7px;
-    background: linear-gradient(180deg,
-            rgba(0, 143, 255, 0.5) 0%,
-            rgba(255, 157, 0, 0.5) 34%,
-            rgba(217, 0, 0, 0.5) 71.5%,
-            rgba(151, 0, 136, 0.5) 100%);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s;
-    box-shadow: 0 4px 15px rgba(186, 200, 255, 0.3), 0 6px 20px rgba(255, 202, 253, 0.2);
+    
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12.41px; /* Ensure the border is rounded */
+  padding: 3.7px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 143, 255, 0.5) 0%,
+    rgba(255, 157, 0, 0.5) 34%,
+    rgba(217, 0, 0, 0.5) 71.5%,
+    rgba(151, 0, 136, 0.5) 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s;
+  box-shadow: 0 4px 15px rgba(186, 200, 255, 0.3),
+    0 6px 20px rgba(255, 202, 253, 0.2);
+    
 }
 
-.listItem:hover {
-    transform: scale(1.05);
-}
-
+/* Activate border when selected */
 .listItem.active::before {
-    opacity: 1;
+  opacity: 1; /* Show border when active */
+  
 }
 
-.listItem.active {
-    transform: scale(1.1);
+/* List Centering */
+.listContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 10px;
 }
 
-small {
+/* Adjust List Spacing */
+.verticalList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* Increased spacing between cards */
+}
+
+/* Reduce Card Size */
+.listItem {
+  cursor: pointer;
+  /* padding: 15px 10px; */
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  color: #000;
+  font-family: 'Comfortaa','sans-serif';
+  font-weight: normal;
+  font-size:0.8em;
+  text-align: center;
+  padding: 1em 0.3em;
+  
+}
+
+/* Copyright Centered at Bottom */
+.copyright {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.19);
+  font-family: Comfortaa, sans-serif;
+  font-size: 0.7em;
+  font-weight: 400;
+  line-height: normal;
+  cursor: default;
+  margin-bottom: 10px;
+}
+
+.year{
     font-size: 0.7em;
 }
-
+/* Force "2025" to the second line */
 #copyright {
-    font-family: 'Comfortaa', sans-serif;
-    font-size: 19.3px;
-    font-weight: 400;
-    line-height: 21.52px;
-    text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    background: #BFBFBF;
+  font-size: 0.3em;
+  font-weight: 400;
+  line-height: 1.5em;
 }
 
 #copyright small {
-    font-family: 'Comfortaa', sans-serif;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 11.15px;
-    text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+  display: block; /* Moves "2025" to the second line */
+  font-size: 0.8em;
 }
 
-@media (max-width: 1250px) {
-    .sidebar{
-        width: 16vw;
-        /* padding-left: 2.5em; */
-    }
-
-    .mainContainer{
-        max-height: 80vh;
-    }
-    .verticalList li {
-        margin: 0.2em 0;
-    }
-
-    .listItem img{
-        width: 1em;
-    }
-
-    .copyright{
-        font-size: 0.9em;
-    }
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        width: 17vw; 
-        padding-left: 2%;
-    }
-    .listItem img {
-        width: 1.2em;
-    }
-}
-
+/* Mobile Responsive Fix */
 @media (max-width: 425px) {
-    .sidebar {
-        z-index: 1001;
-        width: 100vw;
-        min-height: 0;
-        top: 419px;
-        left: 0;
-        padding: 5px 5vw;
-        padding-bottom: 16px;
-        flex-direction: row;
-        background: none;
-    }
-    
-    
-    .mainContainer {
-        position: fixed;
-        bottom: 7px;
-        border-radius: 3.7px;
-        width: 91%;
-        min-height: 0px;
-        height: 45px;
-        border-radius: 10px;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    
-    
-    .listContainer {
-        padding: 2px;
-    }
-    
-    .verticalList {
-        flex-direction: row-reverse;
-        gap: 19vw;
-        width: 100%;
-        margin: 0;
-        padding: 2px 0px;
-    }
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: auto;
+    min-height: 0;
+    padding: 10px 5vw;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
 
-    .listItem, .listItem.active, .listItem:hover{
-        transform: rotate(90deg);
-    }
-    
-    .listItem.active{
-        box-shadow: 1px -1px 2.5px #00000089;
-    }
+  .mainContainer {
+    position: fixed;
+    bottom: 10px;
+    width: 90%;
+    min-height: 0;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 10px;
+    background: linear-gradient(
+      180deg,
+      rgba(230, 225, 253, 0.7) 0%,
+      rgba(253, 215, 222, 0.7) 100%
+    );
+  }
 
-    .listItem{
-        padding: 20px 10px;
-        border-radius: 7px;
-    }
+  .verticalList {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    gap: 5vw;
+    padding: 0;
+    margin: 0;
+  }
 
-    .listItem::before{
-        padding: 2.6px;
-        border-radius: 7px;
-    }
+  .listItem img {
+    width: 5vw;
+  }
 
-    .listItem img{
-        width: 2.5vw;
-    }
-
-    .listItem:nth-child(3) img {
-        width: 3vw !important; 
-    }
-
-    .hide{
-        display: none;
-    }
+  .copyright {
+    display: none; /* Hide on mobile */
+  }
 }

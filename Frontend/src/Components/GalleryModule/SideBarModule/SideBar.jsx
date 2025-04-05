@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Mobile from "./img/Mobile.svg";
-import Tablet from "./img/Tablet.svg";
-import Desktop from "./img/Desktop.svg";
 import styles from "./SideBar.module.css";
 
 const SideBar = () => {
@@ -24,34 +21,28 @@ const SideBar = () => {
             <div className={styles.mainContainer}>
                 <div className={styles.listContainer}>
                     <ul className={styles.verticalList}>
-                        <li
+                        <li 
                             className={`${styles.listItem} ${activeItem === "mobile" ? styles.active : ""}`}
                             onClick={() => handleItemClick("mobile")}
                         >
-                            <Link to="/gallery/mobile">
-                                <img src={Mobile || "/placeholder.svg"} alt="Mobile" />
-                            </Link>
+                            <Link to="/gallery/mobile">Mobile</Link>
                         </li>
-                        <li
+                        <li 
                             className={`${styles.listItem} ${activeItem === "tablet" ? styles.active : ""}`}
                             onClick={() => handleItemClick("tablet")}
                         >
-                            <Link to="/gallery/tablet">
-                                <img src={Tablet || "/placeholder.svg"} alt="Tablet" />
-                            </Link>
+                            <Link to="/gallery/tablet">Tablet</Link>
                         </li>
-                        <li
+                        <li 
                             className={`${styles.listItem} ${activeItem === "desktop" ? styles.active : ""}`}
                             onClick={() => handleItemClick("desktop")}
                         >
-                            <Link to="/gallery/desktop">
-                                <img src={Desktop || "/placeholder.svg"} alt="Desktop" />
-                            </Link>
+                            <Link to="/gallery/desktop">Desktop</Link>
                         </li>
                     </ul>
                 </div>
-                <div className={`${styles.copyright} ${styles.hide}`}>
-                    <p id="copyright">© WallGodds<small> 2025</small></p>
+                <div className={styles.copyright}>
+                    <p id="copyright">© WallGodds <span className={styles.year}>2025</span></p>
                 </div>
             </div>
         </div>
