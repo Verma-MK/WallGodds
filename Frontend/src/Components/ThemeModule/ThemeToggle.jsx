@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import styles from './ThemeToggle.module.css';
 import DarkIcon from '/DarkIcon.svg';
 import LightIcon from '/LightIcon.svg';
+import { MdOutlineDarkMode } from "react-icons/md";
 
 const ThemeToggle = () => {
     const [isDark, setIsDark] = useState(() => {

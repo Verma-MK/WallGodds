@@ -162,7 +162,7 @@
     position: absolute; /* Fix logo at a position */
     margin-right: 1.2em;
     top: 2em; /* Align it with the top of the NavBar */
-    left: 2.5em; /* Add slight spacing from the left edge */
+    left: 1.7em; /* Add slight spacing from the left edge */
     width: 14%; 
     height: auto;
     z-index: 1001; /* Ensure it is above the menu */
@@ -174,7 +174,7 @@
 
 .logo {
     padding: 0;
-    width: 75%;
+    width:9.1em;
     margin-right: 12%;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
