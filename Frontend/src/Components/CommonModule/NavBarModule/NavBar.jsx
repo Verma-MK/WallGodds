@@ -6,12 +6,11 @@ import Style from "./NavBar.module.css";
 import ThemeToggle from "../../ThemeModule/ThemeToggle";
 import Logo from "./Logo";
 
-
 const NavBar = () => {
     return (
         <div className={Style.navbarWrapper}>
-             {/* Logo Section */}
-             <Logo />
+            {/* Logo Section */}
+            <Logo />
 
             {/* Navigation Menu */}
             <nav className={Style.navbar}>
@@ -22,9 +21,10 @@ const NavBar = () => {
                                 <NavLink
                                     to="/"
                                     className={({ isActive }) =>
-                                        isActive ? `${Style.menuLink} ${Style.active} ${Style.hide}` : `${Style.menuLink} ${Style.hide}`
-                                    }
-                                >
+                                        isActive
+                                            ? `${Style.menuLink} ${Style.active} ${Style.hide}`
+                                            : `${Style.menuLink} ${Style.hide}`
+                                    }>
                                     Home
                                 </NavLink>
                             </li>
@@ -32,9 +32,10 @@ const NavBar = () => {
                                 <NavLink
                                     to="/gallery"
                                     className={({ isActive }) =>
-                                        isActive ? `${Style.menuLink} ${Style.active}` : Style.menuLink
-                                    }
-                                >
+                                        isActive
+                                            ? `${Style.menuLink} ${Style.active}`
+                                            : Style.menuLink
+                                    }>
                                     Gallery
                                 </NavLink>
                             </li>
@@ -42,9 +43,10 @@ const NavBar = () => {
                                 <NavLink
                                     to="/upload"
                                     className={({ isActive }) =>
-                                        isActive ? `${Style.menuLink} ${Style.active}` : Style.menuLink
-                                    }
-                                >
+                                        isActive
+                                            ? `${Style.menuLink} ${Style.active}`
+                                            : Style.menuLink
+                                    }>
                                     Upload
                                 </NavLink>
                             </li>
@@ -52,9 +54,10 @@ const NavBar = () => {
                                 <NavLink
                                     to="/aboutus"
                                     className={({ isActive }) =>
-                                        isActive ? `${Style.menuLink} ${Style.active}` : Style.menuLink
-                                    }
-                                >
+                                        isActive
+                                            ? `${Style.menuLink} ${Style.active}`
+                                            : Style.menuLink
+                                    }>
                                     About Us
                                 </NavLink>
                             </li>
@@ -71,9 +74,11 @@ const NavBar = () => {
                         </button>
                     </div>
                     <div className={Style.profileContainer}>
-                        <button className={Style.profileButton}>
-                            <img src={Profile} alt="Profile" />
-                        </button>
+                        <NavLink to="/profile">
+                            <button className={Style.profileButton}>
+                                <img src={Profile} alt="Profile" />
+                            </button>
+                        </NavLink>
                         <ThemeToggle />
                     </div>
                 </div>
