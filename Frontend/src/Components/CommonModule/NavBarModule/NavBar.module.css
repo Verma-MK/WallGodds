@@ -31,6 +31,7 @@
     justify-content: center;
     gap: 1em;
     align-items: center;
+    text-align: center;
     padding: 13px 20px;
     box-sizing: border-box;
     width: 100%;
@@ -43,11 +44,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg,
-            rgba(0, 143, 255, 0.8),
-            rgba(255, 157, 0, 0.8),
-            rgba(217, 0, 0, 0.8),
-            rgba(151, 0, 136, 0.8));
+    background: linear-gradient(
+        45deg,
+        rgba(0, 143, 255, 0.8),
+        rgba(255, 157, 0, 0.8),
+        rgba(217, 0, 0, 0.8),
+        rgba(151, 0, 136, 0.8)
+    );
     border-radius: 10.053px;
     z-index: -1;
     padding: 1px;
@@ -156,6 +159,9 @@
     background: none;
     border: none;
     cursor: pointer;
+    img {
+        margin-top: 5px;
+    }
 }
 
 .logoContainer {
@@ -163,7 +169,7 @@
     margin-right: 1.2em;
     top: 2em; /* Align it with the top of the NavBar */
     left: 1.7em; /* Add slight spacing from the left edge */
-    width: 14%; 
+    width: 14%;
     height: auto;
     z-index: 1001; /* Ensure it is above the menu */
     display: flex;
@@ -174,7 +180,7 @@
 
 .logo {
     padding: 0;
-    width:9.1em;
+    width: 9.1em;
     margin-right: 12%;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -183,7 +189,6 @@
 .logo:hover {
     transform: scale(1.15);
 }
-
 
 /* @media (max-width: 1211px) {
     .menu {
@@ -268,25 +273,25 @@
 } */
 
 @media (max-width: 425px) {
-    .MainContainer{
+    .MainContainer {
         padding: 0.2em 0;
         gap: 0%;
     }
 
-    .MainContainer::before{
+    .MainContainer::before {
         border-radius: 4.5px;
         margin: -1px;
         padding: 1px;
     }
 
-    .navbar{
+    .navbar {
         height: fit-content;
         width: 87%;
         border-radius: 4.5px;
         margin-top: 0.7%;
     }
 
-    .navbarWrapper{
+    .navbarWrapper {
         padding: 0;
         padding-left: 10%;
         display: flex;
@@ -297,10 +302,10 @@
     .logo {
         width: 60%;
         margin-right: 0%;
-        content: url('/LogoSmall.png');
+        content: url("/LogoSmall.png");
     }
 
-    .logoContainer{
+    .logoContainer {
         position: fixed;
         top: 0;
         display: flex;
@@ -309,20 +314,20 @@
         margin-left: 1%;
     }
 
-    .logoLink{
+    .logoLink {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .navItems{
+    .navItems {
         display: flex;
         flex-direction: row;
         width: 60%;
         justify-content: left;
     }
 
-    .menu{
+    .menu {
         display: flex;
         font-size: 1.6vw;
         gap: 2em;
@@ -340,7 +345,7 @@
         width: 16px;
         height: 1.25px;
     }
-    
+
     .searchContainer {
         padding: 0;
         width: 35%;
@@ -349,17 +354,17 @@
         justify-content: right;
     }
 
-    .searchInput{
+    .searchInput {
         padding: 0;
         height: fit-content;
     }
-    
-    .searchButton img{
+
+    .searchButton img {
         width: 2.8vw;
         padding: 1px 1px;
     }
 
-    .searchButton{
+    .searchButton {
         padding: 0 5px;
         height: fit-content;
         display: flex;
@@ -372,7 +377,7 @@
         align-content: center;
     }
 
-    .profileButton{
+    .profileButton {
         justify-content: center;
         align-content: center;
         padding: 0;
@@ -380,8 +385,8 @@
         padding-left: 2px;
         padding-top: 1vw;
     }
-    
-    .profileButton img{
+
+    .profileButton img {
         width: 3vw;
         padding: 0;
     }
@@ -390,10 +395,10 @@
         margin-right: 0.2em;
         top: 1em;
         left: 0.3em;
-        width: 14%; 
+        width: 14%;
     }
 
-    .hide{
+    .hide {
         display: none;
     }
 }
@@ -420,9 +425,11 @@
 }
 
 :global(.dark-theme) .MainContainer::before {
-    background: linear-gradient(45deg,
-    rgba(0, 86, 153, 0.8),     /* Darker blue */
-    rgba(204, 102, 0, 0.8),    /* Darker orange */
-    rgba(153, 0, 0, 0.8),      /* Darker red */
-    rgba(102, 0, 102, 0.8));
+    background: linear-gradient(
+        45deg,
+        rgba(0, 86, 153, 0.8),
+        /* Darker blue */ rgba(204, 102, 0, 0.8),
+        /* Darker orange */ rgba(153, 0, 0, 0.8),
+        /* Darker red */ rgba(102, 0, 102, 0.8)
+    );
 }

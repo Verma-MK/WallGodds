@@ -6,6 +6,7 @@ import Home from "./Components/HomeModule/Home";
 import Upload from "./Components/UploadModule/Upload";
 import Aboutus from "./Components/AboutModule/Aboutus";
 import Error404 from "./Components/ErrorModule/Error404";
+import Profile from "./Components/ProfileModule/Profile";
 
 function App() {
     return (
@@ -15,7 +16,8 @@ function App() {
                 <Route path="/gallery/*" element={<Gallery />} />
                 <Route path="/upload" element={<Upload />} />
                 <Route path="/aboutus" element={<Aboutus />} />
-                <Route path="/error" element={<Error404 />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/*" element={<Error404 />} />
             </Routes>
         </Router>
     );

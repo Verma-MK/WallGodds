@@ -1,8 +1,8 @@
 import React from "react";
 import NavBar from "../CommonModule/NavBarModule/NavBar";
-import styles from "./Upload.module.css";
+import styles from "./Profile.module.css";
 
-const Upload = () => {
+const Profile = () => {
     return (
         <>
             <NavBar />
@@ -17,4 +17,4 @@ const Upload = () => {
     );
 };
 
-export default Upload;
+export default Profile;
