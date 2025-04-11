@@ -9,6 +9,7 @@
     box-sizing: border-box;
 }
 
+  
 .navbarWrapper {
     display: flex;
     gap: 0.1em;
@@ -24,6 +25,10 @@
     padding-left: 14%;
 }
 
+/* New class for non-fixed (static) navbar */
+.navbarStatic {
+    position: relative;
+  }
 .MainContainer {
     position: relative;
     height: 100%;
