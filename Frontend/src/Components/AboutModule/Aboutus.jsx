@@ -111,6 +111,15 @@ const Aboutus = () => {
                             <img src="linkedin-icon.png" alt="LinkedIn" />
                         </a>
                     </div>
+
+<div className={styles.footerImageContainer}>
+        <img
+          src="/let’s work together.png"
+          alt="LET'S WORK TOGETHER"
+          className={styles.letsWorkTogetherImage}
+        />
+        <div className={styles.circle}></div>
+      </div>
                 </div>
             </div>
             <Footer />

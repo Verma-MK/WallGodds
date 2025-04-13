@@ -4,8 +4,8 @@ import styles from "./Aboutus.module.css";  // Ensure the CSS file is imported
 
 const Footer = () => {
   return (
-    <div className={styles.footerContainer}>
-      <div className={styles.footerContent}>
+    <div className={styles.footerContainers}>
+      {/* <div className={styles.footerContent}>
         <p className={styles.rightsReservedText}>
           © WallGodds Community 2025. All rights reserved.
         </p>
@@ -18,7 +18,7 @@ const Footer = () => {
               <img src="Arrow-know-more.png" alt="Know more" />
             </span>
           </a>
-</div>
+         </div>
           <div className={styles.githubIcon}>
             <a
               href="https://github.com/Parnab03/WallGodds"
@@ -38,7 +38,7 @@ const Footer = () => {
           className={styles.letsWorkTogetherImage}
         />
         <div className={styles.circle}></div>
-      </div>
+      </div> */}
     </div>
   );
 };
