@@ -89,14 +89,14 @@ body {
 
 @media (max-width: 425px) {
     .container{
-        height: 96.5vh;
+        height: 96.8vh;
     }
-    
+
     .mainContent{
         width: 100%;
         justify-content: center;
         justify-items: center;
-        margin-top: 3.6em;
+        margin-top: 4.8em !important;
         margin-bottom: 4em;
     }
 
