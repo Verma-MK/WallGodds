@@ -1,7 +1,7 @@
 # 🖼 WallGodds: Minimal by Design, Inspired by You
 
 <div align="center" width ="100%">
-  <img src="https://github.com/Parnab03/WallGodds/blob/main/WallGodds.png" alt="WallGodds Logo" />
+  <img src="https://github.com/Parnab03/WallGodds/blob/main/WEBSITE%20BANNER.png" alt="WallGodds Logo" />
 </div>
 
 ---
@@ -159,7 +159,7 @@ This project is licensed under the [MIT License](LICENSE.md). You’re free to u
 Stay connected with our growing community:  
 - **GitHub Discussions**: [Join the conversation](https://github.com/Parnab03/WallGodds/discussions)  
 - **Discord Server**: [Connect with us](https://discord.gg/kTQ5KWANp8)  
-
+- **LinkedIn Page**: [Follow us](https://www.linkedin.com/company/wallgodds/posts/?feedView=all)
 ---
 
 ## 💡 Suggestions and Feedback  
