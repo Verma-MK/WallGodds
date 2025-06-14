@@ -1,7 +1,16 @@
 # 🖼 WallGodds: Minimal by Design, Inspired by You
 
 <div align="center" width ="100%">
-  <img src="https://github.com/Parnab03/WallGodds/blob/main/WallGodds.png" alt="WallGodds Logo" />
+  <img src="https://github.com/Parnab03/WallGodds/blob/main/WEBSITE%20BANNER.png" alt="WallGodds Logo" />
+</div>
+<br>
+<div align="center">
+  <a href="https://github.com/sayan0328/WallGodds-App" style="text-decoration: none; margin-right: 20px;">
+    <img src="https://img.shields.io/badge/WallGodds%20App-%23008FFF?style=for-the-badge&logo=app&logoColor=blue" alt="WallGodds App" style="border-radius: 7px;">
+  </a>
+   <a href="https://github.com/Parnab03/WallGodds" style="text-decoration: none; margin-right: 20px;">
+    <img src="https://img.shields.io/badge/WallGodds%20Web-%237056F5?style=for-the-badge&logo=web&logoColor=white" alt="WallGodds Web" style="border-radius: 7px;">
+  </a>
 </div>
 
 ---
@@ -159,7 +168,7 @@ This project is licensed under the [MIT License](LICENSE.md). You’re free to u
 Stay connected with our growing community:  
 - **GitHub Discussions**: [Join the conversation](https://github.com/Parnab03/WallGodds/discussions)  
 - **Discord Server**: [Connect with us](https://discord.gg/kTQ5KWANp8)  
-
+- **LinkedIn Page**: [Follow us](https://www.linkedin.com/company/wallgodds/posts/?feedView=all)
 ---
 
 ## 💡 Suggestions and Feedback  
